@@ -11,7 +11,8 @@ def check_strength(pwd: str) -> str:
     common = ["123", "password", "admin", "administrator", "admin", "123456"]
     if any(word in pwd.lower() for word in common):
         feedback.append("Evita palabras comunes.")
-        score =-1
+        score -= 1
+        
     
     #Longitud
     if len(pwd) >= 8:
@@ -42,7 +43,7 @@ def check_strength(pwd: str) -> str:
 
 
     #Simbolos
-    if  re.search(r"[!@#$%^&*(),.?\":{}|<>]", pwd):
+    if  re.search(r"[¡!@#$%^&*(),.¿?\":{}|<>]", pwd):
         score += 1
     else:
         feedback.append("Utiliza al menos un simbolo.")
@@ -52,9 +53,9 @@ def check_strength(pwd: str) -> str:
     if score <= 2:
         return Fore.RED + "Contraseña INSEGURA \n" + "\n".join(feedback)
     if score == 3 or score == 4:
-        return Fore.YELLOW + "Contraseña aceptable \n" + "\n".join(feedback) 
+        return Fore.YELLOW + "Contraseña ACEPTABLE \n" + "\n".join(feedback) 
     else:
-        return Fore.GREEN + "Contraseña aceptable"
+        return Fore.GREEN + "Contraseña SEGURA"
     
 
 if __name__ == "__main__":    
