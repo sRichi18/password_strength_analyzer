@@ -1,0 +1,7 @@
+# Proyecto: Password Strength Analyzer
+# Autor: Ricardo Islas
+# Contacto: www.linkedin.com/in/ricardo-islas-449106323
+# Descripción: Script en Python que evalúa la seguridad de contraseñas.
+# Fecha: Octubre 2025
+
+colorama>=0.4.6
